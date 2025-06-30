@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "prometheus_service"
+    static_configs:
+      - targets: ["localhost:9090"] # Windows
+      # - targets: ["docker.for.mac.localhost:9090"] # macOs
+
+  - job_name: "nodejs_service"
+    static_configs:
+      - targets: ["pod-nodejs:3002"] # Windows
+      # - targets: ["docker.for.mac.localhost:9090"] # macOs
